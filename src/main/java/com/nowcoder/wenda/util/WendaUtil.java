@@ -1,5 +1,6 @@
 package com.nowcoder.wenda.util;
 
+import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -7,6 +8,20 @@ import java.security.MessageDigest;
 
 public class WendaUtil {
     private static final Logger logger = LoggerFactory.getLogger(WendaUtil.class);
+
+    public static int ANONYMOUS_USERID = 3;
+    public static String getJSONString(int code, String msg) {
+        JSONObject json = new JSONObject();
+        json.put("code", code);
+        json.put("msg", msg);
+        return json.toString();
+    }
+
+    public static String getJSONString(int code) {
+        JSONObject json = new JSONObject();
+        json.put("code", code);
+        return json.toString();
+    }
 
     public static String MD5(String key) {
         char hexDigits[] = {
