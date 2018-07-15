@@ -25,6 +25,10 @@ public class UserService {
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     private LoginTicketDAO loginTicketDAO;
 
+    public User selectByName(String name) {
+        return userDao.selectByName(name);
+    }
+
     public User getUser(int id) {
         return userDao.selectById(id);
     }
